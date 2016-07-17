@@ -1,0 +1,125 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="ray.com.mecanumwheel.MainActivity">
+
+    <LinearLayout android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <Button android:id="@+id/reset_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black_overlay"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="RESET" />
+            <SeekBar
+                android:id="@+id/seekbar_ang_speed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:max="360"
+                android:progressDrawable="@drawable/seekbar_bg" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="100dp">
+
+            <!--
+            <com.zerokol.views.JoystickView android:id="@+id/joystick"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"/>
+            -->
+            <RelativeLayout android:id="@+id/joypad"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/button00"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/joystick"
+                    android:src="@drawable/rsz_1button"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/joypad"
+                android:paddingLeft="20dp">
+                <TextView android:id="@+id/dir_angle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="direction angle: 90 deg"/>
+                <TextView android:id="@+id/lin_speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="linear speed : 0 m/s"/>
+                <TextView android:id="@+id/ang_speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="angular speed : 0 rad/s"/>
+                <TextView android:id="@+id/wheel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+                <TextView android:id="@+id/connect_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not connected"/>
+                <Button android:id="@+id/connect_button"
+                    style="?metaButtonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black_overlay"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/bt_connect" />
+                <Button android:id="@+id/disconnect_button"
+                    style="?metaButtonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black_overlay"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="DISCONNECT" />
+
+            </LinearLayout>
+
+            <ray.com.mecanumwheel.VerticalSeekBar android:id="@+id/seekbar_lin_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:max="50"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

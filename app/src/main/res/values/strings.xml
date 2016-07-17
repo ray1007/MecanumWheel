@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MecanumWheel</string>
+
+    <string name="bt_connect">BT Connect</string>
+    <string name="stop">STOP</string>
+</resources>
